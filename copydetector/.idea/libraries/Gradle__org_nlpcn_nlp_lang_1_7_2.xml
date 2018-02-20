@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.nlpcn:nlp-lang:1.7.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nlpcn/nlp-lang/1.7.2/eafb67c1065a49b87f6723f6cd56457223fa5d6e/nlp-lang-1.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nlpcn/nlp-lang/1.7.2/a6cee4c5663f441d31fa0af09620a25b36d361d4/nlp-lang-1.7.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
