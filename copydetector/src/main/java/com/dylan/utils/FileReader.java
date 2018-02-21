@@ -57,32 +57,36 @@ public class FileReader {
     }
 
     public static void main(String[] args) {
-        String filePath1 = "C:/课题/大学生环境保护问卷.docx";
-        String filePath2 = "C:/课题/大学生环境保护问卷（改）.docx";
-        //String filePath3 = "C:/课题/第四节  资优生未来发展的跟踪系统的开发运用.doc";
-        //String filePath4 = "C:/课题/text.txt";
+      //  try {
+            //String filePath1 = "C:/课题/大学生环境保护问卷.docx";
+            String filePath2 = "C:/课题/第四节  资优生未来发展的跟踪系统的开发运用.docx";
+            String filePath3 = "C:/课题/第四节  资优生未来发展的跟踪系统的开发运用（改）.docx";
+            //String filePath4 = "C:/课题/text.txt";
 
-        String text1 = DocxReader(filePath1);
-        String text2 = DocxReader(filePath2);
-        //String text3 = DocReader(filePath3);
-        //String text4 = TxtReader(filePath4);
+            //String text1 = DocxReader(filePath1);
+            String text2 = DocxReader(filePath2);
+            String text3 = DocxReader(filePath3);
+            //text3 = new String(text3.getBytes("UTF-8"));
+            //String text4 = TxtReader(filePath4);
 
-        //System.out.println("text1:" + text1);
-        //System.out.println("text2:" + text2);
-        //System.out.println("text3:" + text3);
-        //System.out.println("text4:" + text4);
+            //System.out.println("text1:" + text1);
+            System.out.println("text2:" + text2);
+            System.out.println("text3:" + text3);
+            //System.out.println("text4:" + text4);
 
-        String splitedText1 = WordSegmenter.plainSeg(text1);
-        String splitedText2 = WordSegmenter.plainSeg(text2);
-        //String splitedText3 = WordSegmenter.plainSeg(text3);
-        //String splitedText4 = WordSegmenter.wordSeg(text4);
+            //String splitedText1 = WordSegmenter.ansjSeg(text1);
+            String splitedText2 = WordSegmenter.ansjSeg(text2);
+            String splitedText3 = WordSegmenter.ansjSeg(text3);
+            //String splitedText4 = WordSegmenter.wordSeg(text4);
 
-        //double result = TextSimilarity.getWordSimilarityScore(splitedText1,splitedText2);
-        //System.out.println(result);
-        //System.out.println(splitedText3);
-        //System.out.println(splitedText4);
-        //String str1="余弦定理算法：doc1 与 doc2 相似度为：0.9954971, 耗时：22mm";
-        //String str2="余弦定理算法：doc1 和doc2 相似度为：0.99425095, 用时：33mm";
-        System.out.println(TextSimilarity.getCosineSimilarityScore(splitedText1,splitedText2));
+            //double result = TextSimilarity.getWordSimilarityScore(splitedText1,splitedText2);
+            //System.out.println(result);
+            System.out.println(splitedText2);
+            System.out.println(splitedText3);
+            System.out.println(TextSimilarity.getWordSimilarityScore(splitedText2,splitedText3));
+       // }catch (UnsupportedEncodingException e) {
+        //    e.printStackTrace();
+       // }
+
     }
 }
