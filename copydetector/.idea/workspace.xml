@@ -947,7 +947,7 @@
       <updated>1519005306665</updated>
       <workItem from="1519005313022" duration="6000000" />
       <workItem from="1519053356033" duration="37000" />
-      <workItem from="1519088728265" duration="28364000" />
+      <workItem from="1519088728265" duration="28880000" />
     </task>
     <servers />
   </component>
@@ -984,7 +984,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34401000" />
+    <option name="totallyTimeSpent" value="34917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
