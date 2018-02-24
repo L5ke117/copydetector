@@ -32,6 +32,11 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+    compile 'mysql:mysql-connector-java'
     compile group: 'org.apache.poi', name: 'poi', version: '3.17'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
     compile group: 'org.apache.poi', name: 'poi-excelant', version: '3.17'
@@ -40,5 +45,7 @@ dependencies {
     compile group: 'org.ansj', name: 'ansj_seg', version: '5.1.1'
     compile 'com.google.guava:guava:24.0-jre'
     compile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
 }
