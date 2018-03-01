@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>文件上传</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+</head>
+<body>
+    <form action="/teacher/upload" enctype="multipart/form-data" method="post">
+        单个文件: <input type="file" name="fileTest"/><br/>
+        多个文件: <input type="file" name="fileList" multiple="multiple"/><br/>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>
