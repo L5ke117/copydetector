@@ -37,17 +37,17 @@
         <form class="form-signin" role="form" name="form" th:action="@{/login}" action="/login" method="post">
             <div class="form-group">
                 <label for="username">账号</label>
-                <input type="text" class="form-control" name="username" value="" placeholder="账号"/>
+                <input type="text" class="form-control" name="username" value="dylan" placeholder="账号"/>
             </div>
             <div class="form-group">
                 <label for="password">密码</label>
-                <input type="password" class="form-control" name="password" placeholder="密码"/>
+                <input type="password" class="form-control" name="password" value="dylan" placeholder="密码"/>
             </div>
             <input type="submit" id="login" value="Login" class="btn btn-primary"/>
         </form>
     </div>
 </div>
-<a href="registerForm.html">注册</a>
+<a th:href="@{/register}">注册</a>
 
 </body>
 </html>

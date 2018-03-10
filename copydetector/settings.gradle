@@ -1,2 +1,4 @@
 rootProject.name = 'copydetector'
+include 'web'
+findProject(':web')?.name = 'copydetector'
 
