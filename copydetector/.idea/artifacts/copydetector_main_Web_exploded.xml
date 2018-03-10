@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="copydetector_main:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/copydetector_main_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="copydetector_main/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="copydetector_main" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
