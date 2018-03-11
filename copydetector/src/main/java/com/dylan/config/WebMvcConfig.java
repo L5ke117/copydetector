@@ -16,12 +16,21 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 @EnableWebMvc  //启用Spring MVC
 @ComponentScan("com.dylan")  //启用组件扫描
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
     @Bean
     public ViewResolver viewResolver(
             SpringTemplateEngine templateEngine) {    //配置Thymeleaf视图解析器
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine);
         return viewResolver;
+    }
+
+    @Bean
+    public ViewResolver viewResolver() {  //配置JSP视图解析器
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+        return resolver;
     }
 
     @Bean

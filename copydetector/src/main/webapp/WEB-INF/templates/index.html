@@ -3,8 +3,23 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
+
     <title sec:authentication="name"></title>
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
     <style type="text/css">
         body {
             padding-top: 50px;
@@ -29,7 +44,42 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>文件上传</h1>
+                        <hr class="intro-divider"/>
+                            <form action="/detect" enctype="multipart/form-data" method="post">
+                                <ul class="list-inline intro-social-buttons">
+                                    <li class="navbar-btn">
+                                        <p>上传待检测文件</p>
+                                    </li>
+                                    <li>
+                                        <input type="file" name="file1" class="btn btn-default btn-lg"/>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline intro-social-buttons">
+                                    <li class="navbar-btn">
+                                        <p>上传被比较文件</p>
+                                    </li>
+                                    <li>
+                                        <input type="file" name="file2" class="btn btn-default btn-lg"/>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline intro-social-buttons">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                                    <input type="submit" value="提交" class="btn btn-default btn-lg"/>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="container">
         <div class="starter-template">
             <h1 th:text="${msg.title}"></h1>
             <p class="bg-primary" th:text="${msg.content}"></p>
@@ -43,6 +93,11 @@
                 <input type="submit" class="btn btn-primary" value="注销"/>
             </form>
         </div>
-    </div>
+    </div> -->
+    <!-- Footer --><!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
