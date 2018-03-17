@@ -46,6 +46,7 @@ public class DetectionController {
                 MultipartFile detectedFile = multiRequest.getFile(iter.next().toString());
                 detectedFileName = detectedFile.getOriginalFilename();
                 String path = "D:/testUpload/";     //先把上传的文件保存至本地
+                //String path = "/var/lib/copydetector/files/";
                 File dir = new File(path);
                 if (!dir.exists()) {
                     dir.mkdirs();
@@ -69,6 +70,7 @@ public class DetectionController {
                 MultipartFile comparedFile = multiRequest.getFile(iter.next().toString());
                 comparedFileName = comparedFile.getOriginalFilename();
                 String path = "D:/testUpload/";     //先把上传的文件保存至本地
+                //String path = "/var/lib/copydetector/files/";
                 File dir = new File(path);
                 if (!dir.exists()) {
                     dir.mkdirs();
