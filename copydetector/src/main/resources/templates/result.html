@@ -7,45 +7,70 @@
     <title>比对结果</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet"/>
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <script src="js/echarts.min.js"></script>
 </head>
 <body>
 <!-- Header -->
 <a name="about"></a>
-<div class="intro-header">
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/index">作业查重系统</a>
+        </div>
+        <div id="navbar" >
+            <ul class="nav navbar-nav navbar-left">
+                <li><a th:href="@{/index}">首页</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a th:href="@{/login?logout}">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <div class="container">
-        <div class="row">
-            <div id="result" class="col-lg-12" style="height:28%">
+        <h1 align="center">量化结果</h1>
+        <hr class="intro-divider"/>
+        <div class="row" align="center">
+                <span>原创字数：</span>
+                <span th:text="${OriginalLength}"></span>
+        </div>
+        <div class="row" align="center">
+            <span>抄袭字数：</span>
+            <span th:text="${duplicateLength}"></span>
 
+        </div>
+        <div class="row" align="center">
+            <span>抄袭比例：</span>
+            <span th:text="${duplicateWordRate}"></span><span>%</span>
+        </div>
+        <br/><br/><br/>
+        <div class="row">
+            <h1 align="center">详细结果</h1>
+            <hr class="intro-divider"/>
+            <div class="col-lg-6" style="position:relative; height:65%; overflow:auto" align="center">
+                <h3>待检测文件</h3>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-6" style="position:relative; height:65%; overflow:auto" align="center">
+                <h3>被比较文件</h3>
+            </div>
+        </div>
+        <div class="row">
                 <div class="col-lg-6" style="position:relative; height:65%; overflow:auto" align="left">
                     <div th:utext="${file1}"></div>
                 </div>
+
                 <div class="col-lg-6" style="position:relative; height:65%; overflow:auto" align="left">
                     <div th:utext="${file2}"></div>
                 </div>
-            </div>
-        </div>
-
+         </div>
     </div>
     <!-- /.container -->
 
-</div>
 <script th:inline="javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('result'));

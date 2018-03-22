@@ -122,6 +122,7 @@ public class DetectionController {
                         if (detectedDuplicateList.contains(x)) {
                             y = "<span class=\"bg-danger text-danger\" onMouseOut=\"this.className='bg-danger text-danger'\" onMouseOver=\"this.className='bg-primary text-primary'\">" + y + "</span>";
                         } else {
+                            //y = "<font color=\"black\">" + y + "</color>";
                             y = "<span>" + y + "</span>";
                         }
                         outPut1[0] = outPut1[0] + y;

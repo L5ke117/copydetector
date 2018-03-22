@@ -17,14 +17,24 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Spring Security演示</a>
+            <a class="navbar-brand" href="/index">作业查重系统</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{/}">首页</a></li>
-                <li><a th:href="@{http://www.baidu.com}">百度</a></li>
+        <div id="navbar" >
+            <ul class="nav navbar-nav navbar-left">
+                <li><a th:href="@{/index}">首页</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>个人中心<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="/login?logout">退出</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

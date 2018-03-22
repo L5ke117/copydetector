@@ -27,6 +27,11 @@
             padding: 40px 15px;
             text-align: center;
         }
+        .align-center{
+            margin:0 auto; /* 居中 这个是必须的，，其它的属性非必须 */
+            width:500px; /* 给个宽度 顶到浏览器的两边就看不出居中效果了 */
+            text-align:center; /* 文字等内容居中 */
+        }
     </style>
 </head>
 <body>
@@ -40,38 +45,28 @@
                     <li><a th:href="@{/index}">首页</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-user"></span>个人中心<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">jmeter</a></li>
-                            <li><a href="#">EJB</a></li>
-                            <li><a href="/login?logout">退出</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">另一个分离的链接</a></li>
-                        </ul>
-                    </li>
+                    <li><a th:href="@{/login?logout}">退出</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="intro-header">
         <div class="container">
+            <br/><br/><br/>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
+                        <div class="align-center">
                         <h1>文件上传</h1>
                         <hr class="intro-divider"/>
+                            <br/><br/>
                             <form action="/detect" enctype="multipart/form-data" method="post">
                                 <ul class="list-inline intro-social-buttons">
                                     <li class="navbar-btn">
                                         <p>上传待检测文件</p>
                                     </li>
                                     <li>
-                                        <input type="file" name="file1" class="btn btn-default btn-lg"/>
+                                        <input type="file" name="file1" class="btn btn-default"/>
                                     </li>
                                 </ul>
                                 <ul class="list-inline intro-social-buttons">
@@ -79,14 +74,18 @@
                                         <p>上传被比较文件</p>
                                     </li>
                                     <li>
-                                        <input type="file" name="file2" class="btn btn-default btn-lg"/>
+                                        <input type="file" name="file2" class="btn btn-default"/>
                                     </li>
                                 </ul>
                                 <ul class="list-inline intro-social-buttons">
+                                    <br/>
                                     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                                    <input type="submit" value="提交" class="btn btn-default btn-lg"/>
+                                    <input type="submit" value="提交" class="btn btn-primary btn-lg"/>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="reset" value="重置" class="btn btn-danger btn-lg"/>
                                 </ul>
                             </form>
+                        </div>
                     </div>
                 </div>
             </div>

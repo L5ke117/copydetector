@@ -16,11 +16,7 @@ apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'dylan-copydetector'
-    version = '0.1.0'
-}
-
-repositories {
-    mavenCentral()
+    version = '1.0.0'
 }
 
 sourceCompatibility = 1.8
